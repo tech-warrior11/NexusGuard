@@ -1,13 +1,14 @@
 # 🛡️ NexusGuard — Security Operations & Threat Detection Platform
 
-[![Live Preview](https://img.shields.io/badge/Live_Preview-View_App-00C7B7?style=for-the-badge&logo=vercel&logoColor=white)](https://nexus-guard-six.vercel.app)
+<p align="center">
+  <a href="https://nexus-guard-six.vercel.app">
+    <img src="https://img.shields.io/badge/Live_Preview-View_App-00C7B7?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Preview" />
+  </a>
+</p>
 
-[![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
-[![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
-[![Vite](https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev)
-[![MITRE ATT&CK](https://img.shields.io/badge/MITRE_ATT%26CK-v14-FF6600?style=for-the-badge)](https://attack.mitre.org)
-[![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org/)
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=python,fastapi,react,vite,sqlite,linux,windows" alt="Tech Stack Tools" />
+</p>
 
 **NexusGuard** is an enterprise-grade Security Operations Center (SOC) monitoring and automated threat detection platform. It centralizes security log ingestion, normalizes events across Linux servers, Windows Event Logs, and Network packet captures, executes real-time correlation detection rules, automates IOC enrichment via AbuseIPDB and VirusTotal, aligns incidents with the MITRE ATT&CK® framework, and provides an interactive analyst workbench with CyberChef decoding tools and downloadable Incident Response Reports.
 
