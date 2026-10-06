@@ -91,6 +91,7 @@ def root():
     }
 
 
+@app.head("/health", tags=["System"])
 @app.get("/health", tags=["System"])
 def health_check(db: Session = Depends(get_db)):
     """

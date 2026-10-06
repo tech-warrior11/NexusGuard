@@ -287,16 +287,17 @@ def init_db():
 
         # 3. Seed or Update SOC Analyst User
         import os
+        from app.api.auth import get_password_hash
+        
         admin_user = os.environ.get("ADMIN_USERNAME", "admin")
+        admin_pass = os.environ.get("ADMIN_PASSWORD", "CHANGE_ME_IMMEDIATELY")
         
         analyst = db.query(User).filter(User.username == admin_user).first()
         if not analyst:
-            # Pre-hashed password for 'admin@1512' to avoid leaking plaintext credentials
-            default_hash = "$2b$12$zfH2N4NqNp2MhHfObsELa.urLfXgqMTyEe0.CnQvsCnHQgtpbjIri"
             analyst = User(
                 username=admin_user,
-                email="admin@nexusguard.internal",
-                password_hash=default_hash,
+                email=f"{admin_user}@nexusguard.internal",
+                password_hash=get_password_hash(admin_pass),
                 role="ADMIN"
             )
             db.add(analyst)

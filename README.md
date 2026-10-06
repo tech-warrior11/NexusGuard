@@ -1,5 +1,7 @@
 # 🛡️ NexusGuard — Security Operations & Threat Detection Platform
 
+[![Live Preview](https://img.shields.io/badge/Live_Preview-View_App-00C7B7?style=for-the-badge&logo=vercel&logoColor=white)](https://nexus-guard-six.vercel.app)
+
 [![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115+-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
@@ -15,19 +17,19 @@
 
 | Tool / Technology | Role in NexusGuard |
 | :--- | :--- |
-| 🐧 **Linux / Ubuntu Logs** | Security server log ingestion (`/var/log/auth.log`, `sshd`, `sudo` privilege escalation) |
-| 🪟 **Windows Event Logs** | Windows Security Event log parsing (`4625` Failed Logon, `4624` Success, `4688` Process Creation) |
-| 🔎 **Wireshark / PCAP** | Network traffic packet stream investigation, TCP SYN stealth scans, C2 beacons, reverse shells |
-| 🌐 **Nmap Simulation** | Reconnaissance detection, multi-port scanning simulation, and perimeter service discovery |
-| 📊 **SIEM Concepts** | Centralized event normalization, multi-field filtering, full-text search, and detection correlation |
-| 🕵️ **VirusTotal Integration** | File Hash (MD5/SHA256) and domain reputation checks, multi-engine detection ratios (e.g., 68/70) |
-| 🚨 **AbuseIPDB Integration**| IP abuse confidence scoring (0-100%), ISP/Geo data, Tor exit node detection, abuse reports |
-| 🧰 **CyberChef Toolkit** | Security analyst utility for Base64 (UTF-8 & UTF-16LE PowerShell), Hex, URL, XOR, ROT13, Defang/Refang, and Regex IOC extraction |
-| 🧠 **MITRE ATT&CK** | Adversary tactic & technique mapping (T1110, T1046, T1059.001, T1071, T1204, T1548, T1486) |
-| 🐍 **Python & SQLAlchemy** | Backend detection engine, rule evaluators, incident report generators, and SQLite data storage |
-| ⚡ **FastAPI** | High-performance asynchronous REST API and WebSockets for real-time live alert streaming |
-| 🎨 **React & Vite** | Cyberpunk dark glassmorphism SOC dashboard, visual SVG analytics, and interactive case workbench |
-| 🔐 **Bcrypt Authentication** | Advanced cryptographic hashing to ensure that all user credentials are 100% securely managed without plain-text exposure |
+| ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black) | Security server log ingestion (`/var/log/auth.log`, `sshd`, `sudo` privilege escalation) |
+| ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white) | Windows Security Event log parsing (`4625` Failed Logon, `4624` Success, `4688` Process Creation) |
+| ![Wireshark](https://img.shields.io/badge/Wireshark-1679A7?style=for-the-badge&logo=wireshark&logoColor=white) | Network traffic packet stream investigation, TCP SYN stealth scans, C2 beacons, reverse shells |
+| ![Nmap](https://img.shields.io/badge/Nmap-000000?style=for-the-badge&logo=nmap&logoColor=white) | Reconnaissance detection, multi-port scanning simulation, and perimeter service discovery |
+| ![SIEM](https://img.shields.io/badge/SIEM-FF4500?style=for-the-badge&logo=splunk&logoColor=white) | Centralized event normalization, multi-field filtering, full-text search, and detection correlation |
+| ![VirusTotal](https://img.shields.io/badge/VirusTotal-394EFF?style=for-the-badge&logo=virustotal&logoColor=white) | File Hash (MD5/SHA256) and domain reputation checks, multi-engine detection ratios (e.g., 68/70) |
+| ![AbuseIPDB](https://img.shields.io/badge/AbuseIPDB-CC0000?style=for-the-badge&logo=security-scorecard&logoColor=white) | IP abuse confidence scoring (0-100%), ISP/Geo data, Tor exit node detection, abuse reports |
+| ![CyberChef](https://img.shields.io/badge/CyberChef-0099FF?style=for-the-badge&logo=chef&logoColor=white) | Security analyst utility for Base64 (UTF-8 & UTF-16LE PowerShell), Hex, URL, XOR, ROT13, Defang/Refang, and Regex IOC extraction |
+| ![MITRE](https://img.shields.io/badge/MITRE-FF6600?style=for-the-badge) | Adversary tactic & technique mapping (T1110, T1046, T1059.001, T1071, T1204, T1548, T1486) |
+| ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) | Backend detection engine, rule evaluators, incident report generators, and SQLite data storage |
+| ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white) | High-performance asynchronous REST API and WebSockets for real-time live alert streaming |
+| ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) | Cyberpunk dark glassmorphism SOC dashboard, visual SVG analytics, and interactive case workbench |
+| ![Bcrypt](https://img.shields.io/badge/Bcrypt-000000?style=for-the-badge&logo=npm&logoColor=white) | Advanced cryptographic hashing to ensure that all user credentials are 100% securely managed without plain-text exposure |
 
 ---
 
@@ -158,4 +160,10 @@ To ensure a safe environment free of exposed vulnerabilities, NexusGuard nativel
 ---
 
 ## 📄 License
-This project is licensed under the MIT License — built purposely for SOC learning, university capstones, and robust cybersecurity analysis portoflios.
+This project is licensed under the MIT License — built purposely for SOC learning, university capstones, and robust cybersecurity analysis portfolios.
+
+---
+
+<p align="center">
+  &copy; 2026 Developed with ❤️ by <a href="https://github.com/tech-warrior11"><b>tech-warrior11</b></a>
+</p>
