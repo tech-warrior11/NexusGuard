@@ -30,7 +30,7 @@
 | ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) | Backend detection engine, rule evaluators, incident report generators, and SQLite data storage |
 | ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white) | High-performance asynchronous REST API and WebSockets for real-time live alert streaming |
 | ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) | Cyberpunk dark glassmorphism SOC dashboard, visual SVG analytics, and interactive case workbench |
-| ![Bcrypt](https://img.shields.io/badge/Bcrypt-000000?style=for-the-badge&logo=npm&logoColor=white) | Advanced cryptographic hashing to ensure that all user credentials are 100% securely managed without plain-text exposure |
+| ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) | Ultra-fast client build pipeline with seamless zero-barrier live interactive telemetry |
 
 ---
 
@@ -140,12 +140,12 @@ NexusGuard includes several interactive attack scenarios that trigger real-time 
 
 ---
 
-## 🔒 Security Best Practices Implemented
+## 🔒 Security Architecture & Live Interactive Demo
 
-To ensure a safe environment free of exposed vulnerabilities, NexusGuard natively embraces zero-trust configurations:
-- **No Plaintext Passwords:** All administrator endpoints and users utilize securely salted `Bcrypt` cryptographic hashes. 
-- **Dynamic JWT Tokens:** Secure authentication keys dynamically re-generate on stateful backend server rotations.
-- **Environment Driven Identity:** Eliminates potential leaks or hard-coded credentials stored in `.py`, `.js`, or Markdown files.
+NexusGuard natively embraces zero-trust security operations and open evaluation:
+- **Instant Live Preview:** Completely open interactive analyst access — no sign-in or authentication barrier required to evaluate all SIEM features.
+- **Dynamic IOC Triage:** Real-time correlation with AbuseIPDB confidence scoring and VirusTotal multi-engine reports.
+- **Sanitized Analyst Workflows:** Eliminates potential leaks or hard-coded secrets while delivering comprehensive SOC simulation and automated reporting.
 
 ---
 

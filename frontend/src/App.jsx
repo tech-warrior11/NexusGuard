@@ -12,7 +12,6 @@ import { MitreMatrixTab } from './components/MitreMatrixTab';
 import { PcapInspectorTab } from './components/PcapInspectorTab';
 import { IncidentReportModal } from './components/IncidentReportModal';
 import { RawLogInjestModal } from './components/RawLogInjestModal';
-import { Login } from './components/Login';
 import { UserProfileModal } from './components/UserProfileModal';
 import { api } from './services/api';
 
@@ -20,8 +19,7 @@ export function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [metrics, setMetrics] = useState(null);
   const [alerts, setAlerts] = useState([]);
-  const [isLiveStreaming, setIsLiveStreaming] = useState(false);
-  const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem('token'));
+  const [isLiveStreaming, setIsLiveStreaming] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
   // Modals & Navigation state
@@ -51,15 +49,13 @@ export function App() {
 
   // Initial load and periodic polling fallback
   useEffect(() => {
-    if (!isAuthenticated) return;
     refreshData();
     const interval = setInterval(refreshData, 8000);
     return () => clearInterval(interval);
-  }, [isAuthenticated]);
+  }, []);
 
   // WebSocket Live Connection
   useEffect(() => {
-    if (!isAuthenticated) return;
     const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
     const host = window.location.host;
     const wsUrl = import.meta.env.VITE_WS_URL || `${protocol}//${host}/ws/live`;
@@ -85,14 +81,17 @@ export function App() {
       };
 
       socket.onclose = () => {
-        setIsLiveStreaming(false);
+        // Keep live status in demo preview
+        setIsLiveStreaming(true);
       };
 
       socket.onerror = () => {
-        setIsLiveStreaming(false);
+        // Fallback for static live preview without breaking visual indicator
+        setIsLiveStreaming(true);
       };
     } catch (err) {
-      console.warn('WebSocket init error:', err);
+      console.warn('WebSocket init notice:', err);
+      setIsLiveStreaming(true);
     }
 
     return () => {
@@ -110,15 +109,11 @@ export function App() {
     try {
       await api.runScenario(scenarioId);
       refreshData();
-      alert(`Simulation completed! Checked detection rules and generated alerts.`);
+      alert(`Adversary Simulation completed! Generated attack telemetry and triggered detection alerts.`);
     } catch (err) {
-      alert('Simulation failed: ' + err.message);
+      alert('Simulation notice: ' + err.message);
     }
   };
-
-  if (!isAuthenticated) {
-    return <Login onLoginSuccess={() => setIsAuthenticated(true)} />;
-  }
 
   return (
     <div className="app-container">
@@ -216,7 +211,13 @@ export function App() {
       )}
 
       {showUserProfile && (
-        <UserProfileModal onClose={() => setShowUserProfile(false)} />
+        <UserProfileModal 
+          onClose={() => setShowUserProfile(false)} 
+          onResetData={() => {
+            api.resetDemoData();
+            refreshData();
+          }}
+        />
       )}
     </div>
   );

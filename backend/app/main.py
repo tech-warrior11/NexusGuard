@@ -54,14 +54,14 @@ app.add_middleware(
 # Auth Router (No dependency)
 app.include_router(auth_router, prefix="/api/v1")
 
-# Include API Routers under /api/v1 (Secured)
-app.include_router(logs_router, prefix="/api/v1", dependencies=[Depends(get_current_user)])
-app.include_router(alerts_router, prefix="/api/v1", dependencies=[Depends(get_current_user)])
-app.include_router(incidents_router, prefix="/api/v1", dependencies=[Depends(get_current_user)])
-app.include_router(rules_router, prefix="/api/v1", dependencies=[Depends(get_current_user)])
-app.include_router(threat_intel_router, prefix="/api/v1", dependencies=[Depends(get_current_user)])
-app.include_router(tools_router, prefix="/api/v1", dependencies=[Depends(get_current_user)])
-app.include_router(metrics_router, prefix="/api/v1", dependencies=[Depends(get_current_user)])
+# Include API Routers under /api/v1 (Open access for seamless live preview and SOC operation)
+app.include_router(logs_router, prefix="/api/v1")
+app.include_router(alerts_router, prefix="/api/v1")
+app.include_router(incidents_router, prefix="/api/v1")
+app.include_router(rules_router, prefix="/api/v1")
+app.include_router(threat_intel_router, prefix="/api/v1")
+app.include_router(tools_router, prefix="/api/v1")
+app.include_router(metrics_router, prefix="/api/v1")
 app.include_router(ws_router, prefix="")
 
 # Remove top-level aliases to enforce strict /api/v1 prefix and security

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Radio, Terminal, Bell, Activity, RefreshCw, User } from 'lucide-react';
+import { Shield, Radio, Terminal, Bell, Activity, RefreshCw, User, CheckCircle2 } from 'lucide-react';
 
 export function Header({ metrics, onRefresh, isRefreshing, onQuickSimulate, isLiveStreaming, onOpenProfile }) {
   const [time, setTime] = useState('');
@@ -14,11 +14,12 @@ export function Header({ metrics, onRefresh, isRefreshing, onQuickSimulate, isLi
     return () => clearInterval(interval);
   }, []);
 
-  const threatLevel = metrics?.threat_level || 'DEFCON-3 (ELEVATED GUARD)';
-  let defconClass = 'ELEVATED';
+  const threatLevel = metrics?.threat_level || 'DEFCON-1 (CRITICAL ATTACK DETECTED)';
+  let defconClass = 'CRITICAL';
   if (threatLevel.includes('CRITICAL') || threatLevel.includes('DEFCON-1')) defconClass = 'CRITICAL';
   else if (threatLevel.includes('HIGH') || threatLevel.includes('DEFCON-2')) defconClass = 'HIGH';
   else if (threatLevel.includes('NORMAL') || threatLevel.includes('DEFCON-4')) defconClass = 'NORMAL';
+  else defconClass = 'ELEVATED';
 
   return (
     <header className="top-header">
@@ -42,7 +43,13 @@ export function Header({ metrics, onRefresh, isRefreshing, onQuickSimulate, isLi
         {/* Live Streaming Indicator */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', color: 'var(--text-secondary)' }}>
           <div className={`status-dot ${isLiveStreaming ? '' : 'red'}`} />
-          <span className="mono" style={{ fontSize: '11px' }}>{isLiveStreaming ? 'LIVE SIEM BUS' : 'OFFLINE'}</span>
+          <span className="mono" style={{ fontSize: '11px' }}>{isLiveStreaming ? 'LIVE SIEM BUS' : 'DEMO STREAM'}</span>
+        </div>
+
+        {/* Analyst Lead Badge */}
+        <div className="mono" style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '11px', color: 'var(--color-cyan)', background: 'rgba(0, 240, 255, 0.08)', padding: '5px 10px', borderRadius: '6px', border: '1px solid rgba(0, 240, 255, 0.2)' }}>
+          <CheckCircle2 size={12} color="var(--color-cyan)" />
+          <span>OPERATOR: LEAD ANALYST</span>
         </div>
 
         {/* Clock */}
@@ -50,8 +57,7 @@ export function Header({ metrics, onRefresh, isRefreshing, onQuickSimulate, isLi
           {time}
         </div>
 
-        {/* Live Streaming Indicator */}
-
+        {/* Refresh SOC Data */}
         <button 
           onClick={onRefresh} 
           className="btn btn-secondary btn-sm"
@@ -61,11 +67,11 @@ export function Header({ metrics, onRefresh, isRefreshing, onQuickSimulate, isLi
           <RefreshCw size={14} className={isRefreshing ? 'spin' : ''} />
         </button>
 
-        {/* User Profile */}
+        {/* Operator Profile Modal */}
         <button 
           onClick={onOpenProfile} 
           className="btn btn-secondary btn-sm"
-          title="User Profile"
+          title="Active Operator Profile"
         >
           <User size={14} />
         </button>
